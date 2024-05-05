@@ -28,6 +28,8 @@ public class Create_Color_blocks : MonoBehaviour
             cube.transform.parent = parent.transform;
             cube.tag = "Object_B";
             cube.name = "Object_B";
+            //AudioSourceコンポーネントをアタッチ
+            cube.AddComponent<AudioSource>();
             
         
                 //色を一列ごとに変える

@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Ripple_Ver2 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private AudioClip brakeSound;
     void Start()
     {
-
+        //AudioSourceコンポーネントを取得
+        brakeSound = Resources.Load<AudioClip>("SE/magic-gravity1");
     }
 
         void OnCollisionEnter(Collision other)
         {
             if (other.gameObject.tag == "Object_C")
             {
+                //音を再生
+                GetComponent<AudioSource>().PlayOneShot(brakeSound);
                 //Object_Cの色をPlayerタグのマテリアルの色に変更
                 other.gameObject.GetComponent<Renderer>().material.color = GetComponent<Renderer>().material.color;
                 //時間をかけて半径rも同じ色に変更
