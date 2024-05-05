@@ -10,7 +10,21 @@ public class Broken : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(gameObject, 0.2f);
+            //コライダーを削除
+            Destroy(GetComponent<BoxCollider>());
+            //サイズを0.1秒ごとに小さく
+            StartCoroutine("ScaleDown");
+            //0.05*20秒後に触れたオブジェクトを削除
+            Destroy(gameObject, 1.0f);
+        }
+    }
+
+    IEnumerator ScaleDown()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
     }
 }

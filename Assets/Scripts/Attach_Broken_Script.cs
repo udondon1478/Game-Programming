@@ -21,6 +21,9 @@ public class Attach_Broken_Script : MonoBehaviour
         foreach (GameObject cube in cubes)
         {
             cube.AddComponent<Broken>();
+            cube.AddComponent<Brake>();
+            //Physics Materialを割り当てる
+            cube.GetComponent<BoxCollider>().material = Resources.Load<PhysicMaterial>("floor");
         }
 
 
