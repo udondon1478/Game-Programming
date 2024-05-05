@@ -8,6 +8,14 @@ public class Attach_Broken_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Playerタグのオブジェクトを全て取得
+        //Ripple_Ver2スクリプトをアタッチ
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            player.AddComponent<Ripple_Ver2>();
+        }
+        
         GameObject[] poles = GameObject.FindGameObjectsWithTag("Object_A");
         //全てのオブジェクトにA_Trailスクリプトをアタッチ
         foreach (GameObject pole in poles)

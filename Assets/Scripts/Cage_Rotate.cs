@@ -21,6 +21,8 @@ public class Cage_Rotate : MonoBehaviour
             Destroy(cage);
             //Game_Statusというグローバルフラグをtrueにする
             Game_Status = true;
+            //停止
+            enabled = false;
         }
     }
 
