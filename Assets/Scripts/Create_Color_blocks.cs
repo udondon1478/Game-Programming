@@ -63,7 +63,7 @@ public class Create_Color_blocks : MonoBehaviour
                     new Color(1.0f, 0.0f, 0.0f, 1.0f)
                 };
                 //現在のColorIndexの色にcubesを塗る
-                cubes[0].GetComponent<Renderer>().material.color = colors[colorIndex];
+                cubes[j].GetComponent<Renderer>().material.color = colors[colorIndex];
                 //上で塗ったものをログに表示
                 Debug.Log(cubes[0].name + " : " + colors[colorIndex]);
 
@@ -75,16 +75,7 @@ public class Create_Color_blocks : MonoBehaviour
                     colorIndex = 0;
                 }
 
-                /*colors.lengthの値をデバッグログに表示
 
-
-                //色を
-                int colorIndex = Random.Range(0, colors.Length);
-                //ランダムでブロックを選択
-                int cubeIndex = Random.Range(0, cubes.Length);
-                //ブロックの色を変更
-                cubes[cubeIndex].GetComponent<Renderer>().material.color = colors[colorIndex];
-                */
 
             }
 
